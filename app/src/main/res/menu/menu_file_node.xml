@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item
+        android:title="New"
+        android:id="@+id/item_menu_file_node_new">
+        
+        <menu>
+            
+            <item
+                android:id="@+id/item_menu_file_node_new_android_resource"
+                android:title="Resource Android">
+
+                <menu>
+
+                    <item
+                        android:id="@+id/item_menu_file_node_new_activity"
+                        android:title="Activity"/>
+
+                    <item
+                        android:id="@+id/item_menu_file_node_new_fragment"
+                        android:title="Fragment"/>
+
+                </menu>
+
+            </item>
+
+            <item
+                android:id="@+id/item_menu_file_node_new_class"
+                android:title="Java Class"/>
+
+            <item
+                android:id="@+id/item_menu_file_node_new_folder"
+                android:title="Folder"/>
+            
+            
+        </menu>
+        
+    </item>
+    
+    <item
+        android:id="@+id/item_menu_file_node_rename"
+        android:title="Rename"/>
+    
+    <item
+        android:id="@+id/item_menu_file_node_delete"
+        android:title="Delete"/>
+    
+    <item
+        android:id="@+id/item_menu_file_node_info"
+        android:title="Info"/>
+    
+    <item
+        android:id="@+id/item_menu_file_node_copy_path"
+        android:title="Copy Path"/>
+    
+</menu>

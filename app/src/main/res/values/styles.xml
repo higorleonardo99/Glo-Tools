@@ -1,0 +1,11 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    
+    <style name="TreeNodeStyle">
+        <item name="android:paddingLeft">12dp</item>
+    </style>
+
+</resources>

@@ -40,11 +40,18 @@ public class FileItemNodeAdapter extends TreeNode.BaseNodeViewHolder<FileItemNod
         
         //set values
         isLeaf = node.isLeaf();
-        if (node.isLeaf()) {
+       /* if (node.isLeaf()) {
             itemArrow.setVisibility(View.INVISIBLE);
-        }
+        }*/
+       
         
         File file = value.getItemFile();
+        
+        //show arrow
+        if(file.isDirectory()){
+            itemArrow.setImageResource(R.drawable.ic_arrow_right);
+        }
+        
         
         itemTitle.setText(file.getName());
         setIcon(file);

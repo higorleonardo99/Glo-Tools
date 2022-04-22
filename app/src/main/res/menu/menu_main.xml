@@ -5,4 +5,8 @@
         android:id="@+id/item_menu_main_about"
         android:title="About"/>
     
+    <item
+        android:id="@+id/item_menu_main_select_path"
+        android:title="Select Path Projects"/>
+    
 </menu>

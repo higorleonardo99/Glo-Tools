@@ -1,59 +1,56 @@
 package bo.hlva.glotools.ui.tasks;
 
-import android.os.AsyncTask;
-import com.google.android.material.dialog.MaterialDialogs;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import android.content.Context;
 import android.app.ProgressDialog;
-import java.io.File;
+import android.content.Context;
+import android.os.AsyncTask;
+import com.blankj.utilcode.util.FileIOUtils;
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.ResourceUtils;
 import com.blankj.utilcode.util.ZipUtils;
+import java.io.File;
 import java.io.IOException;
-import com.blankj.utilcode.util.FileIOUtils;
-import android.os.Environment;
 
-public class CreateTemplateAndroidxTask extends AsyncTask<String,Boolean,String> {
+public class CreateTemplateAppCompatTask extends AsyncTask<String,Boolean,String> {
 
     private Context context;
     private ProgressDialog dialog;
-    
-    public CreateTemplateAndroidxTask(Context context){
+
+    public CreateTemplateAppCompatTask(Context context){
         this.context = context;
     }
-    
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        
+
         dialog = new ProgressDialog(context);
         dialog.setCancelable(false);
         dialog.setMessage("Creating Project..");
         dialog.show();
-      
+
     }
-    
+
     @Override
     protected String doInBackground(String[] strings) {
-        
+
         String pathProject = strings[0];
         String nameProject = strings[1];
         String namePackage = strings[2];
-        
+
         setupProject(pathProject,nameProject,namePackage);
-        
+
         return "Completed";
     }
 
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        
+
         dialog.setMessage(result);
         dialog.hide();
     }
-    
-    
+
+
     /**
      * crear template del proyecto
      */
@@ -67,7 +64,7 @@ public class CreateTemplateAndroidxTask extends AsyncTask<String,Boolean,String>
          * eliminar archivo temporal
          * renombrar valores
          **/
-         
+
         File dirProject = new File(dirPathProject);
 
         //template temporal
@@ -75,8 +72,8 @@ public class CreateTemplateAndroidxTask extends AsyncTask<String,Boolean,String>
         FileUtils.createOrExistsFile(temp);
 
         //copy from assets
-        String nameTemplate = "androidx.zip";
-        ResourceUtils.copyFileFromAssets("templates/androidx/"+nameTemplate,temp.getAbsolutePath());
+        String nameTemplate = "appcompat.zip";
+        ResourceUtils.copyFileFromAssets("templates/appcompat/"+nameTemplate,temp.getAbsolutePath());
 
         //descomprimir template
         try {
@@ -94,14 +91,8 @@ public class CreateTemplateAndroidxTask extends AsyncTask<String,Boolean,String>
     private void renameFiles(File dirProject,String nameProject,String namePackage){
 
         //gradle
-        File settings = new File(dirProject,"settings.gradle");
         File build = new File(dirProject,"app/build.gradle");
 
-        if(settings.exists()){
-            String content = FileIOUtils.readFile2String(settings);
-            content = content.replace("$project_name$",nameProject);
-            FileIOUtils.writeFileFromString(settings,content);
-        }
         if(build.exists()){
             String content = FileIOUtils.readFile2String(build);
             content = content.replace("$package_name$",namePackage);
@@ -137,15 +128,15 @@ public class CreateTemplateAndroidxTask extends AsyncTask<String,Boolean,String>
         }
 
         //files java
-        File debug = new File(dirPackage,"ui/activities/DebugActivity.java");
+      //  File debug = new File(dirPackage,"ui/activities/DebugActivity.java");
         File main = new File(dirPackage,"ui/activities/MainActivity.java");
 
-        if(debug.exists()){
+     /*   if(debug.exists()){
             String content = FileIOUtils.readFile2String(debug);
             content = content.replace("$package_name$",namePackage);
             FileIOUtils.writeFileFromString(debug,content);
 
-        }
+        }*/
 
         if(main.exists()){
             String content = FileIOUtils.readFile2String(main);
@@ -154,6 +145,5 @@ public class CreateTemplateAndroidxTask extends AsyncTask<String,Boolean,String>
         }
 
     }
-    
     
 }

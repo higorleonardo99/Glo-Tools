@@ -97,6 +97,7 @@ public class ProjectStructureFragment extends Fragment implements OnProjectChang
                 }
             });
     }
+    
 
     @Override
     public void onDestroy() {
@@ -104,7 +105,7 @@ public class ProjectStructureFragment extends Fragment implements OnProjectChang
 
         //guardar estado 
         String state = treeView.getSaveState();
-        if (state != null && !state.isEmpty()) {
+        if (state != null) {
 
             ProjectStateManager.saveStateTreeView(getContext(), state);
         }
@@ -194,7 +195,7 @@ public class ProjectStructureFragment extends Fragment implements OnProjectChang
 
     @Override
     public void onProjectChange() {
-
+        
         TreeNode root = TreeNode.root();
 
         GenerateProjectStructureTask task = new GenerateProjectStructureTask();

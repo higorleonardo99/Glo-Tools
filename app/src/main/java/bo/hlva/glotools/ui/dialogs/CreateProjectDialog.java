@@ -18,6 +18,9 @@ import java.io.File;
 import com.google.android.material.textfield.TextInputLayout;
 import android.text.TextWatcher;
 import android.text.Editable;
+import bo.hlva.glotools.utils.ProjectStateManager;
+import android.widget.RadioButton;
+import bo.hlva.glotools.ui.tasks.CreateTemplateAppCompatTask;
 
 public class CreateProjectDialog extends DialogFragment {
     
@@ -25,6 +28,9 @@ public class CreateProjectDialog extends DialogFragment {
     
     private TextInputEditText edtNameProject,edtNamePackage;
     private TextInputLayout textLayoutProject,textLayoutPackage;
+    
+    private RadioButton rbAndroidX,rbAppCompat;
+    
     private OnCreateProjectListener listener;
 
     @Override
@@ -51,6 +57,9 @@ public class CreateProjectDialog extends DialogFragment {
         textLayoutProject = view.findViewById(R.id.dialog_create_project_layout_name_project);
         textLayoutPackage = view.findViewById(R.id.dialog_create_project_layout_name_package);
         
+        rbAndroidX = view.findViewById(R.id.dialog_create_project_btn_androidx);
+        rbAppCompat = view.findViewById(R.id.dialog_create_project_btn_appcompat);
+        
         builder.setView(view);
             
         return builder.create();
@@ -73,12 +82,27 @@ public class CreateProjectDialog extends DialogFragment {
                         if(isOk()){
                             
                             //directorio del proyecto
-                            File dirProject = new File(getRootDir(),edtNameProject.getText().toString());
+                            File dirProject;
+                         /*  String pathProjects = ProjectStateManager.getPathProjects(getContext());
+                            
+                            if(pathProjects != null){
+                                dirProject   = new File(pathProjects,edtNameProject.getText().toString());
+                            }
+                            */
+                            dirProject = new File(getRootDir(),edtNameProject.getText().toString());
+                            
                             FileUtils.createOrExistsDir(dirProject);
                             
-                            //task
-                            CreateTemplateAndroidxTask task = new CreateTemplateAndroidxTask(getContext());
-                            task.execute(dirProject.getAbsolutePath(),edtNameProject.getText().toString(),edtNamePackage.getText().toString());
+                            //androidx or appcompat
+                            if(rbAndroidX.isChecked()){
+                                CreateTemplateAndroidxTask task = new CreateTemplateAndroidxTask(getContext());
+                                task.execute(dirProject.getAbsolutePath(),edtNameProject.getText().toString(),edtNamePackage.getText().toString());
+                                
+                            }
+                            else if(rbAppCompat.isChecked()){
+                                CreateTemplateAppCompatTask task = new CreateTemplateAppCompatTask(getContext());
+                                task.execute(dirProject.getAbsolutePath(),edtNameProject.getText().toString(),edtNamePackage.getText().toString());
+                            }
                             
                             //pass data
                             listener.onCreateProject(dirProject);

@@ -81,8 +81,17 @@ public class ListProjectsFragment extends Fragment implements ItemRecyclerViewLi
         
         ArrayList<ItemProject> projects = new ArrayList<>();
         
+      //  File delfautDirProjects = new File(ProjectStateManager.getPathProjects(getContext()));
         File dirProjects = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"AppProjects");
         
+     /*   if(delfautDirProjects.exists()){
+            for(File project : delfautDirProjects.listFiles()){
+
+                if(project.isDirectory()){
+                    projects.add(new ItemProject(project));
+                }
+            }
+        }*/
         if(dirProjects.exists()){
             
             for(File project : dirProjects.listFiles()){
@@ -91,7 +100,6 @@ public class ListProjectsFragment extends Fragment implements ItemRecyclerViewLi
                     projects.add(new ItemProject(project));
                 }
             }
-            
         }
         
         return projects;

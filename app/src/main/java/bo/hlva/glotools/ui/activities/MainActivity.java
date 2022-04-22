@@ -27,7 +27,6 @@ public class MainActivity extends BaseActivity implements CreateProjectDialog.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-       
         
         //verificar permisos de almacenamiento
         
@@ -83,6 +82,10 @@ public class MainActivity extends BaseActivity implements CreateProjectDialog.On
             case R.id.item_menu_main_about:
                 showAboutDialog();
                 return true;
+                
+            case R.id.item_menu_main_select_path:
+                
+                return true;
         }
         
         return super.onOptionsItemSelected(item);
@@ -93,7 +96,7 @@ public class MainActivity extends BaseActivity implements CreateProjectDialog.On
         
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("About");
-        builder.setMessage("Glo Tools helper for aide IDE \nby @HL Dev\n@email hlvargasarrazola@gmail.com");
+        builder.setMessage("Glo Tools helper for Android Project\nby Higor Leonardo Vargas\n@email leonardovargasarrazola@gmail.com");
         builder.show();
     }
     

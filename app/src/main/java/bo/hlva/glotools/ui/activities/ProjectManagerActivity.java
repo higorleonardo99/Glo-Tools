@@ -54,10 +54,17 @@ public class ProjectManagerActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.item_menu_pm_settings:
                 startActivity(new Intent(this,SettingsActivity.class));
+                return true;
+                
             case R.id.item_menu_pm_refresh_project:
                 if(projectStructuteFragment != null){
                     projectStructuteFragment.onProjectChange();
                 }
+                return true;
+                
+            case R.id.item_menu_pm_close_project:
+                closeProject();
+                return true;
         }
         
         return super.onOptionsItemSelected(item);
@@ -99,6 +106,8 @@ public class ProjectManagerActivity extends AppCompatActivity {
         //reset app
         ProjectStateManager.saveProject(getApplicationContext(),null);
         ProjectStateManager.saveStateTreeView(getApplicationContext(),"");
+        startActivity(new Intent(this,MainActivity.class));
+        finish();
         
     }
 }

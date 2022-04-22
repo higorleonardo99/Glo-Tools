@@ -4,35 +4,59 @@
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-    android:paddingLeft="23dp"
-    android:paddingRight="23dp">
+	android:paddingLeft="23dp"
+	android:paddingRight="23dp">
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Name Project"
+		android:layout_marginTop="10dp"
+		android:id="@+id/dialog_create_project_layout_name_project">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/dialog_create_project_edt_name_project"/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Name Package"
+		android:layout_marginTop="10dp"
+		android:id="@+id/dialog_create_project_layout_name_package">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/dialog_create_project_edt_name_package"/>
+
+	</com.google.android.material.textfield.TextInputLayout>
     
-    <com.google.android.material.textfield.TextInputLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name Project"
-        android:layout_marginTop="10dp"
-        android:id="@+id/dialog_create_project_layout_name_project">
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:gravity="end">
         
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <RadioButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/dialog_create_project_edt_name_project"/>
+            android:id="@+id/dialog_create_project_btn_androidx"
+            android:text="AndroidX"
+            android:checked="true"/>
+            
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialog_create_project_btn_appcompat"
+            android:text="AppCompat"
+            android:checked="false"/>
         
-    </com.google.android.material.textfield.TextInputLayout>
-    
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name Package"
-        android:layout_marginTop="10dp"
-        android:id="@+id/dialog_create_project_layout_name_package">
+    </RadioGroup>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/dialog_create_project_edt_name_package"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-    
 </LinearLayout>
+

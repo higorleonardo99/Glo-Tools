@@ -17,6 +17,7 @@ public class ProjectStateManager {
     public static final String PREFERENCES = "PREFERENCES";
     public static final String ANDROID_PROJECT = "ANDROID_PROJECT";
     public static final String STATE_TREE_VIEW = "STATE_TREE_VIEW";
+    public static final String PATH_PROJECTS = "PATH_PROJECTS";
     
     /**
     * guarda proyecto en preferencias
@@ -68,5 +69,32 @@ public class ProjectStateManager {
         String state = preferences.getString(STATE_TREE_VIEW,null);
         
         return state;
+    }
+    
+
+    /**
+     * guarda directorio de proyectos en preferencias
+     * @param context, contexto de la aplicacion
+     * @param dirPath, ruta de proyectos
+     */
+    public static void savePathProjects(Context context,@Nullable String dirPathProjects){
+
+        SharedPreferences prefereces = PreferenceManager.getDefaultSharedPreferences(context);
+        prefereces.edit().putString(PATH_PROJECTS,dirPathProjects).apply();
+
+    }
+    
+    /**
+     * recupera ruta de proyectos de preferencias
+     * @param context, contexto de la aplicacion
+     * @return ruta de proyectos
+     */
+    @Nullable
+    public static String getPathProjects(Context context){
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String dirProject = preferences.getString(PATH_PROJECTS,null);
+
+        return dirProject;
     }
 }

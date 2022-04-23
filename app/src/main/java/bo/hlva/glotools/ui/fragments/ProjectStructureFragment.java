@@ -1,19 +1,30 @@
 package bo.hlva.glotools.ui.fragments;
 
-import bo.hlva.glotools.R;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
+import bo.hlva.glotools.ui.activities.DrawableActivity;
 import bo.hlva.glotools.ui.activities.ProjectManagerActivity;
 import bo.hlva.glotools.ui.adapters.FileItemNodeAdapter;
+import bo.hlva.glotools.ui.dialogs.CreateActivityDialog;
+import bo.hlva.glotools.ui.dialogs.CreateClassDialog;
+import bo.hlva.glotools.ui.dialogs.CreateFolderDialog;
+import bo.hlva.glotools.ui.dialogs.CreateFragmentDialog;
+import bo.hlva.glotools.ui.dialogs.CreateLayoutDialog;
+import bo.hlva.glotools.ui.dialogs.DeleteFileDialog;
+import bo.hlva.glotools.ui.listeners.OnProjectChangeListener;
 import bo.hlva.glotools.utils.ProjectStateManager;
 import bo.hlva.glotools.utils.ProjectUtils;
+import bo.hlva.glotools.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.unnamed.b.atv.model.TreeNode;
 import com.unnamed.b.atv.view.AndroidTreeView;
@@ -21,17 +32,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import bo.hlva.glotools.ui.listeners.OnProjectChangeListener;
-import bo.hlva.glotools.ui.dialogs.CreateFolderDialog;
-import bo.hlva.glotools.ui.dialogs.CreateClassDialog;
-import bo.hlva.glotools.ui.dialogs.DeleteFileDialog;
-import bo.hlva.glotools.ui.dialogs.CreateFragmentDialog;
-import androidx.appcompat.app.AlertDialog;
-import android.content.DialogInterface;
-import bo.hlva.glotools.ui.dialogs.CreateLayoutDialog;
-import android.content.Intent;
-import bo.hlva.glotools.ui.activities.DrawableActivity;
-import bo.hlva.glotools.ui.dialogs.CreateActivityDialog;
 
 public class ProjectStructureFragment extends Fragment implements OnProjectChangeListener {
 

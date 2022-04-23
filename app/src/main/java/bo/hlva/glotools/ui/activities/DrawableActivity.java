@@ -1,13 +1,12 @@
 package bo.hlva.glotools.ui.activities;
 
-import bo.hlva.glotools.R;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.appcompat.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
-import androidx.core.view.MenuItemCompat;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
+import bo.hlva.glotools.R;
 
 public class DrawableActivity extends BaseActivity implements SearchView.OnQueryTextListener {
 

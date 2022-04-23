@@ -1,16 +1,17 @@
 package bo.hlva.glotools.ui.adapters;
 
-import java.io.File;
-import com.unnamed.b.atv.model.TreeNode;
-import android.view.View;
+import android.R;
 import android.content.Context;
-import android.view.LayoutInflater;
-import bo.hlva.glotools.R;
-import android.widget.ImageView;
-import android.widget.TextView;
-import com.blankj.utilcode.util.FileUtils;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import bo.hlva.glotools.R;
+import com.blankj.utilcode.util.FileUtils;
+import com.unnamed.b.atv.model.TreeNode;
+import java.io.File;
 
 /*
 * clase adaptador de nodos para estructura del proyecto

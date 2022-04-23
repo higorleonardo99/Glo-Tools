@@ -1,13 +1,13 @@
 package bo.hlva.glotools.ui.dialogs;
 
 import android.view.View;
+import bo.hlva.glotools.ui.listeners.OnProjectChangeListener;
 import bo.hlva.glotools.R;
-import java.io.File;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.ResourceUtils;
-import bo.hlva.glotools.ui.listeners.OnProjectChangeListener;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import java.io.File;
 
 public class CreateLayoutDialog extends BaseDialogFragment {
 

@@ -1,10 +1,7 @@
 package bo.hlva.glotools.ui.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import com.blankj.utilcode.util.BarUtils;
-import android.graphics.Color;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class BaseActivity extends AppCompatActivity {
 

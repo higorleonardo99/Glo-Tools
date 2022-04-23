@@ -1,9 +1,8 @@
 package bo.hlva.glotools.ui.fragments;
 
-import bo.hlva.glotools.R;
-import androidx.preference.PreferenceFragment;
 import android.os.Bundle;
 import androidx.preference.PreferenceFragmentCompat;
+import bo.hlva.glotools.R;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 

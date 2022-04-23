@@ -1,6 +1,5 @@
 package bo.hlva.glotools.ui.activities;
 
-import bo.hlva.glotools.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,10 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import bo.hlva.glotools.ui.fragments.ProjectStructureFragment;
-import java.io.File;
-import com.blankj.utilcode.util.BarUtils;
-import android.graphics.Color;
 import bo.hlva.glotools.utils.ProjectStateManager;
+import bo.hlva.glotools.R;
+import java.io.File;
 
 public class ProjectManagerActivity extends AppCompatActivity {
     

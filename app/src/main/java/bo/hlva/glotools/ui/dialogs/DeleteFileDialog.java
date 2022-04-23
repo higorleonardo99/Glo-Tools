@@ -1,8 +1,10 @@
 package bo.hlva.glotools.ui.dialogs;
+
 import android.view.View;
-import java.io.File;
 import bo.hlva.glotools.ui.listeners.OnProjectChangeListener;
+import bo.hlva.glotools.R;
 import com.blankj.utilcode.util.FileUtils;
+import java.io.File;
 
 public class DeleteFileDialog extends BaseDialogFragment {
 

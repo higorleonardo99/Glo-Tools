@@ -1,17 +1,14 @@
 package bo.hlva.glotools.ui.tasks;
 
-import android.os.AsyncTask;
-import com.google.android.material.dialog.MaterialDialogs;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import android.content.Context;
 import android.app.ProgressDialog;
-import java.io.File;
+import android.content.Context;
+import android.os.AsyncTask;
+import com.blankj.utilcode.util.FileIOUtils;
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.ResourceUtils;
 import com.blankj.utilcode.util.ZipUtils;
+import java.io.File;
 import java.io.IOException;
-import com.blankj.utilcode.util.FileIOUtils;
-import android.os.Environment;
 
 public class CreateTemplateAndroidxTask extends AsyncTask<String,Boolean,String> {
 

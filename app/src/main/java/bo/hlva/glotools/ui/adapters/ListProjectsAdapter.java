@@ -1,15 +1,14 @@
 package bo.hlva.glotools.ui.adapters;
 
-import bo.hlva.glotools.R;
-import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
-import android.widget.TextView;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import bo.hlva.glotools.data.model.ItemProject;
 import android.view.LayoutInflater;
-import bo.hlva.glotools.utils.ProjectUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import bo.hlva.glotools.data.model.ItemProject;
 import bo.hlva.glotools.ui.listeners.ItemRecyclerViewListener;
+import bo.hlva.glotools.R;
+import java.util.ArrayList;
 
 public class ListProjectsAdapter extends RecyclerView.Adapter<ListProjectsAdapter.ViewHolder> {
 

@@ -1,15 +1,14 @@
 package bo.hlva.glotools.ui.adapters;
 
-import bo.hlva.glotools.R;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.view.ViewGroup;
-import android.view.LayoutInflater;
+import androidx.recyclerview.widget.RecyclerView;
+import bo.hlva.glotools.R;
 import java.io.File;
 import java.util.ArrayList;
-import android.graphics.drawable.Drawable;
 
 public class DrawableListAdapter extends RecyclerView.Adapter<DrawableListAdapter.ViewHolder> {
 

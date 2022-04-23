@@ -1,15 +1,14 @@
 package bo.hlva.glotools.ui.dialogs;
 
-import androidx.fragment.app.DialogFragment;
 import android.app.Dialog;
-import android.os.Bundle;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.view.View;
-import androidx.appcompat.app.AlertDialog;
 import android.widget.Button;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
 import bo.hlva.glotools.ui.listeners.OnProjectChangeListener;
-import android.content.Context;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public abstract class BaseDialogFragment extends DialogFragment {
 

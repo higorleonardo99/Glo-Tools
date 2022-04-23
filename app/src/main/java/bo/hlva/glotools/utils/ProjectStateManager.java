@@ -1,7 +1,6 @@
 package bo.hlva.glotools.utils;
 
 import android.content.Context;
-import java.io.File;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import androidx.annotation.Nullable;

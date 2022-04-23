@@ -1,19 +1,18 @@
 package bo.hlva.glotools.ui.activities;
 
-import bo.hlva.glotools.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import bo.hlva.glotools.ui.dialogs.CreateProjectDialog;
+import bo.hlva.glotools.ui.fragments.ListProjectsFragment;
 import bo.hlva.glotools.utils.ProjectStateManager;
+import bo.hlva.glotools.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.io.File;
-import bo.hlva.glotools.ui.fragments.ListProjectsFragment;
 
 public class MainActivity extends BaseActivity implements CreateProjectDialog.OnCreateProjectListener {
     

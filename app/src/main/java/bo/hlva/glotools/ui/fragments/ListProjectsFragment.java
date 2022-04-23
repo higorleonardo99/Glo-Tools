@@ -1,24 +1,23 @@
 package bo.hlva.glotools.ui.fragments;
 
-import bo.hlva.glotools.R;
-import androidx.fragment.app.Fragment;
-import android.view.ViewGroup;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.os.Bundle;
-import androidx.recyclerview.widget.RecyclerView;
-import bo.hlva.glotools.ui.adapters.ListProjectsAdapter;
+import android.view.ViewGroup;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 import bo.hlva.glotools.data.model.ItemProject;
-import java.io.File;
-import android.os.Environment;
-import bo.hlva.glotools.ui.listeners.ItemRecyclerViewListener;
-import com.blankj.utilcode.util.ToastUtils;
-import android.content.Intent;
-import bo.hlva.glotools.ui.activities.ProjectManagerActivity;
 import bo.hlva.glotools.ui.activities.MainActivity;
+import bo.hlva.glotools.ui.activities.ProjectManagerActivity;
+import bo.hlva.glotools.ui.adapters.ListProjectsAdapter;
+import bo.hlva.glotools.ui.listeners.ItemRecyclerViewListener;
 import bo.hlva.glotools.utils.ProjectStateManager;
+import bo.hlva.glotools.R;
+import java.io.File;
+import java.util.ArrayList;
 
 public class ListProjectsFragment extends Fragment implements ItemRecyclerViewListener {
     

@@ -1,6 +1,5 @@
 package bo.hlva.glotools.ui.dialogs;
 
-import bo.hlva.glotools.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,19 +7,17 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import bo.hlva.glotools.ui.tasks.CreateTemplateAndroidxTask;
+import bo.hlva.glotools.ui.tasks.CreateTemplateAppCompatTask;
+import bo.hlva.glotools.R;
 import com.blankj.utilcode.util.FileUtils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
-import java.io.File;
 import com.google.android.material.textfield.TextInputLayout;
-import android.text.TextWatcher;
-import android.text.Editable;
-import bo.hlva.glotools.utils.ProjectStateManager;
-import android.widget.RadioButton;
-import bo.hlva.glotools.ui.tasks.CreateTemplateAppCompatTask;
+import java.io.File;
 
 public class CreateProjectDialog extends DialogFragment {
     
